@@ -1,7 +1,7 @@
 {% load static %}
 <html>
     <head>
-    	<title>jbr@atolcd</title>
+    	<title>Doudingue's</title>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -12,11 +12,14 @@
             {% if user.is_authenticated %}
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             {% endif %}
-            <h1><a href="">doudingue's Blog</a></h1>
+            <h1><a href="{% url 'post_list' %}">doudingue's Blog</a></h1>
+            <div class="feature">
+                <a href="{% url 'polls:index' %}"><span class="glyphicon glyphicon-plus"></span> Nouveau : venez répondre à mes sondages ! xoxo</a>
+            </div>
         </header>
         <div class="content container">
         	<div class="row">
-        		<div class="col-md-8">
+        		<div class="col-md-12">
 		        	{% block content %}
                     {% endblock %}
 		        </div>
